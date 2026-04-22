@@ -1,0 +1,36 @@
+---
+timestamp:
+  - key: log.timestamp
+event_code:
+  - key: log.eventid
+event_source:
+  - key: log.provider
+hostname:
+  - key: log.hostname
+username:
+  - key: log.User
+  - key: log.ParentUser
+  - key: log.TargetUserName
+  - key: log.SubjectUserName
+log_level:
+  - key: log.level
+source_ip:
+  - key: log.IpAddress
+destination_ip: null
+source_port:
+  - key: log.IpPort
+destination_port: null
+protocol: null
+rule_name:
+  - key: rule_title
+rule_id:
+  - key: rule_id
+rule_level:
+  - key: rule_level
+rule_category: null
+rule_attacktechniques:
+  - key: tags
+    regex: 't\d{4}'
+rule_attacktactics:
+  - key: tags
+    regex: 'attack\.(?![tT]\d)(\w+)'

@@ -1,0 +1,36 @@
+---
+timestamp:
+  - key: event.@timestamp
+event_code:
+  - key: event.event.code
+event_source:
+  - key: event.event.provider
+hostname:
+  - key: event.host.name
+username:
+  - key: event.user.name
+log_level:
+  - key: event.log.level
+source_ip:
+  - key: event.source.ip
+destination_ip:
+  - key: event.destination.ip
+source_port:
+  - key: event.source.port
+destination_port:
+  - key: event.destination.port
+protocol:
+  - key: event.network.protocol
+rule_name:
+  - key: rule.name
+rule_id:
+  - key: rule.id
+rule_level:
+  - key: rule.level
+rule_category: null
+rule_attacktechniques:
+  - key: rule.tags
+    regex: 't\d{4}'
+rule_attacktactics:
+  - key: rule.tags
+    regex: 'attack\.(?![tT]\d)(\w+)'

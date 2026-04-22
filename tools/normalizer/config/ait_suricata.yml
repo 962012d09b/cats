@@ -1,0 +1,28 @@
+---
+timestamp:
+  - key: "@timestamp"
+event_code: null
+event_source: null
+hostname: null
+username: null
+log_level: null
+source_ip:
+  - key: data.src_ip
+destination_ip:
+  - key: data.dest_ip
+source_port:
+  - key: data.src_port
+destination_port:
+  - key: data.dest_port
+protocol:
+  - key: data.proto
+rule_name:
+  - key: data.alert.signature
+rule_id:
+  - key: data.alert.signature_id
+rule_level:
+  - key: data.alert.severity
+rule_category:
+  - key: data.alert.category
+rule_attacktechniques: null
+rule_attacktactics: null

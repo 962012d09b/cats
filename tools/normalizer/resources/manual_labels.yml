@@ -1,0 +1,17 @@
+dedale:
+  # all related to PrintNightmare attack
+  NTLMv1 Logon Between Client and Server:
+    - timestamp: "2025-01-08T15:10:02.199Z"
+      label: True
+  Rundll32 Execution Without Parameters:
+    - timestamp: "2025-01-08T15:10:06.810Z"
+      label: True
+  Suspicious Spool Service Child Process:
+    - timestamp: "2025-01-08T15:10:06.810Z"
+      label: True
+  Bad Opsec Defaults Sacrificial Processes With Improper Arguments:
+    - timestamp: "2025-01-08T15:10:06.810Z"
+      label: True
+  Rundll32 Execution With Uncommon DLL Extension:
+    - timestamp: "2025-01-08T15:10:06.810Z"
+      label: True
