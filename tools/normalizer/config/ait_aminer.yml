@@ -1,0 +1,23 @@
+---
+timestamp:
+  - key: LogData.Timestamps
+event_code: null
+event_source:
+  - key: LogData.LogResources
+hostname: null
+username: null
+log_level: null
+source_ip: null
+destination_ip: null
+source_port: null
+destination_port: null
+protocol: null
+rule_name:
+  - key: AnalysisComponent.AnalysisComponentName
+rule_id:
+  - key: AnalysisComponent.AnalysisComponentIdentifier
+rule_level: null
+rule_category:
+  - key: AnalysisComponent.AnalysisComponentType
+rule_attacktechniques: null
+rule_attacktactics: null

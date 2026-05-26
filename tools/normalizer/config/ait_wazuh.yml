@@ -1,0 +1,111 @@
+---
+timestamp:
+  - key: "@timestamp"
+event_code: null
+event_source:
+  - key: location
+hostname:
+  - key: predecoder.hostname
+  - set_if_conditions_met:
+      if:
+        - key: location
+          contains: /var/log/apache2/intranet # intranet-access.log / intranet-error.log
+      then_set_to: intranet-server
+  - set_if_conditions_met:
+      if:
+        - key: location
+          contains: /var/log/apache2/proxy # proxy-access-access.log / proxy-error-error.log
+      then_set_to: proxy-server # name up for discussion, not found in data but listed as separate host in paper
+  - set_if_conditions_met:
+      if:
+        - key: full_log
+          contains: cloud.dmz.smith.russellmitchell.com
+      then_set_to: cloud-share
+  - set_if_conditions_met:
+      if:
+        - key: full_log
+          contains: pid=30140 # this pid string and the ones below appear exclusively in logs from specific hosts
+      then_set_to: inet-firewall
+  - set_if_conditions_met:
+      if:
+        - key: full_log
+          contains: pid=23662
+      then_set_to: intranet-server
+  - set_if_conditions_met:
+      if:
+        - key: full_log
+          contains: pid=30310
+      then_set_to: internal-share
+  - set_if_conditions_met:
+      if:
+        - key: full_log
+          contains: pid=18508
+      then_set_to: cloud-share
+  - set_if_conditions_met:
+      if:
+        - key: full_log
+          contains: pid=17695
+      then_set_to: webserver
+  - set_if_conditions_met:
+      if:
+        - key: full_log
+          contains: pid=8566
+      then_set_to: vpn
+  - set_if_conditions_met:
+      if:
+        - key: full_log
+          contains: 24/Jan/2022:03:57:01
+        - key: location
+          contains: horde
+      then_set_to: morris-mail
+  - set_if_conditions_met:
+      if:
+        - key: full_log
+          contains: 24/Jan/2022:03:57:02
+        - key: location
+          contains: horde
+      then_set_to: morris-mail
+  - set_if_conditions_met:
+      if:
+        - key: data.srcip
+          contains: 172.19.131.174
+        - key: location
+          contains: horde
+      then_set_to: mail
+  - set_if_conditions_met:
+      if:
+        - key: data.srcip
+          contains: 192.168.230.122
+        - key: full_log
+          contains: 24/Jan/2022:03:57:18
+        - key: location
+          contains: horde
+      then_set_to: mail
+username: null
+log_level: null
+source_ip:
+  - key: data.srcip
+  - key: full_log
+    regex: 'lip=(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})'
+destination_ip:
+  - key: data.dstip
+  - key: full_log
+    regex: 'rip=(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})'
+source_port:
+  - key: data.srcport
+destination_port:
+  - key: data.dstport
+protocol: null
+rule_name:
+  - key: rule.description
+rule_id:
+  - key: rule.id
+rule_level:
+  - key: rule.level
+rule_category:
+  - key: rule.groups
+rule_attacktechniques:
+  - key: rule.mitre.id
+    regex: '[tT]\d{4}'
+rule_attacktactics:
+  - key: rule.mitre.tactic

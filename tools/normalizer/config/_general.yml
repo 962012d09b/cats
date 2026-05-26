@@ -1,0 +1,89 @@
+---
+features:
+
+  timestamp:
+    type: string
+    mandatory: true
+    as_list: false
+
+  event_code:
+    type: integer
+    mandatory: false
+    as_list: false
+
+  event_source:
+    type: string
+    mandatory: false
+    as_list: false
+
+  hostname:
+    type: string
+    mandatory: false
+    as_list: false
+
+  username:
+    type: string
+    mandatory: false
+    as_list: false
+
+  log_level:
+    type: string
+    mandatory: false
+    as_list: false
+
+  source_ip:
+    type: string
+    mandatory: false
+    as_list: false
+
+  destination_ip:
+    type: string
+    mandatory: false
+    as_list: false
+
+  source_port:
+    type: integer
+    mandatory: false
+    as_list: false
+
+  destination_port:
+    type: integer
+    mandatory: false
+    as_list: false
+
+  protocol:
+    type: string
+    mandatory: false
+    as_list: false
+
+  rule_name:
+    type: string
+    mandatory: false
+    as_list: false
+
+  rule_id:
+    type: string
+    mandatory: true
+    as_list: false
+
+  rule_level:
+    type: string
+    mandatory: false
+    as_list: false
+
+  rule_category:
+    type: string
+    mandatory: false
+    as_list: true
+
+  rule_attacktechniques:
+    type: string
+    mandatory: false
+    as_list: true
+    lowercase: true
+
+  rule_attacktactics:
+    type: string
+    mandatory: false
+    as_list: true
+    lowercase: true

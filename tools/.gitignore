@@ -1,0 +1,14 @@
+# Python & Package Installation
+*_cache/
+*.egg-info/
+__pycache__/
+.pytest_cache/
+
+# Testing
+.coverage
+*.jsonl
+*.json
+*.yaml
+
+# Local database
+*.sqlite

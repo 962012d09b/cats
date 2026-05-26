@@ -1,0 +1,41 @@
+---
+timestamp:
+  - key: event.@timestamp
+event_code: null
+event_source: null
+hostname: null
+username: null
+log_level: null
+source_ip:
+  - key: event.message
+    regex: '\b(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b'
+    regex_match_index: 0
+destination_ip:
+  - key: event.message
+    regex: '\b(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b'
+    regex_match_index: 1
+source_port:
+  - key: event.message
+    regex: '\b(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\:([1-9][0-9]{0,4})\b'
+    regex_match_index: 0
+destination_port:
+  - key: event.message
+    regex: '\b(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\:([1-9][0-9]{0,4})\b'
+    regex_match_index: 1
+protocol:
+  - key: event.message
+    regex: "\\{([A-Za-z]+)\\}"
+rule_name:
+  - key: event.message
+    regex: "(?<=\\] ).*?(?= \\[)"
+rule_id:
+  - key: event.message
+    regex: "\\[\\d+:(\\d+):\\d+\\]"
+rule_level:
+  - key: event.message
+    regex: "\\[Priority: (\\d+)\\]"
+rule_category:
+  - key: event.message
+    regex: "\\[Classification: ([^\\]]+)\\]"
+rule_attacktechniques: null
+rule_attacktactics: null
